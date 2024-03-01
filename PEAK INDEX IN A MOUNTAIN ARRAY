@@ -1,0 +1,26 @@
+Given a mountain array arr, our task is to return the index i such that arr[0] < arr[1] < ... < arr[i - 1] < arr[i] > arr[i + 1] > ... > arr[arr.length - 1]. In simpler terms, all elements to the left are sorted ascending and all elements to the right are sorted descending.
+
+CODE =
+class Solution {
+public:
+    int peakIndexInMountainArray(vector<int>& arr) {
+        int s = 0 ;
+        int e = arr.size() - 1 ;
+        int mid = s + (e-s)/2;
+        while(s < e)
+        {
+            if(arr[mid]<arr[mid+1])
+            {
+                s = mid + 1 ;
+            }
+            else
+            {
+                e = mid ;
+            }
+            mid = s+(e-s)/2;
+        }
+        return s ;
+    
+}};
+        
+   
