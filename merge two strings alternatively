@@ -1,1 +1,36 @@
+word1 1111111
+word 2 22222
+merge like 121212121212121
+step 1. uses two pointers to iterate in loops
+step 2. append them , alternately
+step 3. If one string is longer  append the remaining characters from the longer string
 
+
+class Solution {
+public:
+    string mergeAlternately(string word1, string word2) {
+        int i =0;
+        int j =0;
+        string result;
+// two pointers to iterate , and append them alternately
+        while(i<word1.length() && j<word2.length())
+        {
+          result += word1[i++];
+          result += word2[j++];
+
+        }
+
+// one string is larger then append 
+         while (i < word1.length()) {
+        result += word1[i++];
+    }
+    while (j < word2.length()) {
+        result += word2[j++];
+    }
+
+
+    return result;
+
+        }
+    }
+;
